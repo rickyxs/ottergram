@@ -44,9 +44,10 @@ body {
     flex: 0 1 auto;
     order: 2;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
-    padding: 0;
+    padding: 20px 0;
     white-space: nowrap;
     overflow-x: auto;
    
@@ -77,7 +78,13 @@ body {
     min-width: 120px;
     max-width: 120px;
     border: 1px solid rgb(100%, 100%, 100%);
-    border: 1px solid rgba(100%, 100%, 100%, 0.8);}
+    border: 1px solid rgba(100%, 100%, 100%, 0.8);
+    
+}
+.thumbnail-item:hover {
+    transform: scale(1.2);
+    transition: transform 1000ms ease-in;
+   }
 
 
 .thumbnail-title {
@@ -101,10 +108,13 @@ body {
     width: 90%;
    }
    
-   .detail-image-frame {
+   
+.detail-image-frame {
     position: relative;
     text-align: center;
-   }
+  
+    transition: transform 333ms;
+  }
     
     .detail-image-title {
         position: absolute;
@@ -112,7 +122,60 @@ body {
         left: 4px;
         font-family: airstreamregular;
         color: white;
-        text-shadow: rgba(0, 0, 0, 0.9) 10px 20px 7px;
-        font-size: 50px;
+        text-shadow: rgba(0, 0, 0, 0.9) 4px 8px 2px;
+        font-size: 40px;
        }
+
        
+.is-tiny {
+    transform: scale(0.001);
+    transition: transform 0ms;
+}
+       
+
+.hidden-detail .detail-image-container { 
+    display: none;
+}
+
+.hidden-detail .thumbnail-list {
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden-detail .thumbnail-item {
+    max-width: 80%;
+}
+
+.buttons{
+    background-color: #5e5e5e;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+
+  .buttons:hover {
+      background-color: #3e8e41;
+    cursor:pointer;}
+
+  .buttons:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  #next{
+    position: absolute;
+    bottom: 50%;
+    right: 20%;
+  }
+
+  #previous{
+    position: absolute;
+    bottom: 50%;
+    left: 20%;
+  }
